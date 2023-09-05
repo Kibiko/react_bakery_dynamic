@@ -1,5 +1,9 @@
 # Lab - The BNTA Bakery
 
+## Component Diagram (Extensions)
+
+![](./component_diagram.png)
+
 In this exercise we're going to start building a React app. Ultimately the user will be able to see a range of cake recipes and be able to add their own. We have provided three cakes as your baseline below. This array has been already placed into state within the start code
 
 ```json
