@@ -9,7 +9,14 @@ const CakeForm = ( {cakes, addNewCake, calculateAvgRating} ) => {
     const [error, setError] = useState("");
 
     const handleIngredients = (ingredients) => {
-        return ingredients.split(",");
+        let listOfIngredients = ingredients.split(",");
+        for(let i = 0; i< listOfIngredients.length ; i++){
+            if(listOfIngredients[i].trim() === ""){
+                listOfIngredients.splice(i,1);
+            }
+        }
+        listOfIngredients = listOfIngredients.map((item) => item.trim());
+        return listOfIngredients;
     }
 
     const handleValidation = () => {
@@ -28,6 +35,11 @@ const CakeForm = ( {cakes, addNewCake, calculateAvgRating} ) => {
         if(rating > 5 || rating < 0){
             validation = false;
             setError("Please rate out of 5");
+        }
+
+        if(cakeName === "" || ingredients === "" || price === "" || rating === ""){
+            validation = false;
+            setError("Please fill out all fields");
         }
 
         return validation;
