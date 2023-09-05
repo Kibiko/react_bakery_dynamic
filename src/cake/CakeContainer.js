@@ -63,7 +63,7 @@ const CakeContainer = () => {
 	let updatedCakesList = [];
 
 	const addNewCake = (newCake) => {
-		updatedCakesList = [...listOfCakes, newCake];
+		updatedCakesList = [newCake, ...listOfCakes];
 		setListOfCakes(updatedCakesList);
 	}
 
@@ -83,8 +83,8 @@ const CakeContainer = () => {
     <>
 		<p>Overall Revenue: £{revenue}</p>
 		<p>Average Rating of Cakes: {avgRating}</p>
-        <CakeList cakes={listOfCakes} calculateRevenue={calculateRevenue}/>
 		<CakeForm cakes={listOfCakes} addNewCake={addNewCake} calculateAvgRating={calculateAvgRating}/>
+        <CakeList cakes={listOfCakes} calculateRevenue={calculateRevenue}/>
     </>
   )
 }

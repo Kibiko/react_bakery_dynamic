@@ -2,8 +2,8 @@ import SaleCounter from "./SaleCounter";
 
 const Cake = ({cake, calculateRevenue}) => {
 
-  const displayIngredients = cake.ingredients.map((ingredient) => {
-    return <li key={ingredient}>{ingredient}</li>
+  const displayIngredients = cake.ingredients.map((ingredient, index) => {
+    return <li key={index}>{ingredient}</li>
   });
 
   return (
